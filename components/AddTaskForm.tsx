@@ -19,24 +19,24 @@ export default function AddTaskForm({ onAddTask }: AddTaskFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-8">
-      <div className="space-y-3 mb-4">
-        <label htmlFor="task-input" className="block text-sm font-semibold text-slate-700">New Task</label>
+    <form onSubmit={handleSubmit} className="mb-10 pb-8 border-b border-gray-200">
+      <div className="space-y-3 mb-5">
+        <label htmlFor="task-input" className="block text-sm font-semibold text-gray-700">Add a New Task</label>
         <input
           id="task-input"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Add a new task..."
-          className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white placeholder-slate-400 text-slate-900"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white placeholder-gray-400 text-gray-900"
           aria-label="Task title"
         />
       </div>
-      <div className="flex gap-3 flex-wrap">
+      <div className="flex gap-4 flex-wrap items-center">
         <select
           value={priority}
           onChange={(e) => setPriority(e.target.value as Priority)}
-          className="px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-900 font-medium"
+          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900 font-medium"
           aria-label="Task priority"
           style={{ borderRadius: '6px' }}
         >
@@ -46,7 +46,7 @@ export default function AddTaskForm({ onAddTask }: AddTaskFormProps) {
         </select>
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2 rounded font-semibold flex-shrink-0"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2 rounded font-semibold"
           style={{ borderRadius: '6px' }}
           aria-label="Add task"
         >

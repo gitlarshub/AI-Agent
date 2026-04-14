@@ -65,6 +65,19 @@ When implementing features:
 8. Ensure UI follows Figma design
 9. Ensure code compiles without errors
 
+# UI Layout Rules - Always Follow These
+
+When creating or modifying any UI screen (especially Task Manager or dashboard pages):
+
+- Always wrap the main content in a centered container: Use `max-w-4xl mx-auto` (or max-w-5xl) + `px-4 sm:px-6 lg:px-8`.
+- Outer page wrapper: `min-h-screen bg-gray-50 py-8` or `py-10`.
+- All major sections (header, form, task list, empty state) must be inside a clean white card: `bg-white rounded-2xl shadow-sm p-6` or `p-8`.
+- Never let content stretch full-width or stick to the left/top edge. Always add generous breathing room and horizontal centering.
+- Make the layout feel modern, airy and balanced – similar to premium task apps like Todoist or Notion.
+- For empty states: Center the message nicely inside the white card with larger text and good spacing.
+
+These rules have highest priority. Never ignore them, even if the user prompt doesn't mention layout.
+
 ## Testing Rules
 
 - Ensure components render without errors
