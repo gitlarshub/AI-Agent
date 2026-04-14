@@ -68,12 +68,12 @@ export default function HomePage() {
   })
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-        <div className="bg-white rounded-2xl shadow-sm p-8 sm:p-10" style={{ boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)' }}>
-          <header className="mb-12 pb-8 border-b border-gray-200">
-            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-2">Task Manager</h1>
-            <p className="text-gray-500 text-lg">Organize and track your tasks with ease</p>
+    <main className="min-h-screen bg-gray-50 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
+          <header className="mb-8">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">Task Manager</h1>
+            <p className="text-gray-500 text-base">Organize and track your tasks with ease</p>
           </header>
           <AddTaskForm onAddTask={addTask} />
           <FilterButtons activeFilter={filter} onFilterChange={setFilter} />

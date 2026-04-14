@@ -19,8 +19,8 @@ export default function AddTaskForm({ onAddTask }: AddTaskFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-10 pb-8 border-b border-gray-200">
-      <div className="space-y-3 mb-5">
+    <form onSubmit={handleSubmit} className="mb-8">
+      <div className="space-y-3 mb-4">
         <label htmlFor="task-input" className="block text-sm font-semibold text-gray-700">Add a New Task</label>
         <input
           id="task-input"
@@ -32,7 +32,7 @@ export default function AddTaskForm({ onAddTask }: AddTaskFormProps) {
           aria-label="Task title"
         />
       </div>
-      <div className="flex gap-4 flex-wrap items-center">
+      <div className="flex gap-3 flex-wrap items-center">
         <select
           value={priority}
           onChange={(e) => setPriority(e.target.value as Priority)}
@@ -46,7 +46,7 @@ export default function AddTaskForm({ onAddTask }: AddTaskFormProps) {
         </select>
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2 rounded font-semibold"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-semibold"
           style={{ borderRadius: '6px' }}
           aria-label="Add task"
         >

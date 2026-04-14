@@ -11,7 +11,7 @@ type TaskItemProps = {
 export default function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
     return (
         <li
-            className={`flex items-center justify-between px-6 py-5 transition-colors ${task.completed
+            className={`flex items-center justify-between px-6 py-4 transition-colors ${task.completed
                 ? "bg-gray-50"
                 : "bg-white hover:bg-gray-50"
                 }`}

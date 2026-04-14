@@ -13,13 +13,13 @@ export default function FilterButtons({ activeFilter, onFilterChange }: FilterBu
     ]
 
     return (
-        <div className="flex flex-wrap gap-3 mb-10 pb-8 border-b border-gray-200">
-            <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex gap-2">
                 {filters.map((filter) => (
                     <button
                         key={filter.value}
                         onClick={() => onFilterChange(filter.value)}
-                        className={`px-6 py-2 rounded font-semibold transition-colors ${activeFilter === filter.value
+                        className={`px-5 py-2 rounded font-semibold transition-colors ${activeFilter === filter.value
                                 ? "bg-blue-600 text-white"
                                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                             }`}
