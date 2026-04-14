@@ -71,7 +71,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-gray-50">
       {/* Header Section - Full Width */}
       <header className="bg-white border-b border-gray-200">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+        <div className="px-4 sm:px-8 lg:px-12 xl:px-16 py-20 sm:py-28">
           <div className="text-center">
             <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-3">Task Manager</h1>
             <p className="text-gray-500 text-lg">Organize and track your tasks with ease</p>
@@ -80,7 +80,7 @@ export default function HomePage() {
       </header>
 
       {/* Content Section - Full Width */}
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="px-4 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-16">
         <div className="bg-white rounded-xl shadow-sm p-8 sm:p-10">
           <AddTaskForm onAddTask={addTask} />
           <FilterButtons activeFilter={filter} onFilterChange={setFilter} />
@@ -88,5 +88,8 @@ export default function HomePage() {
         </div>
       </div>
     </main>
+  )
+      </div >
+    </main >
   )
 }
