@@ -19,7 +19,7 @@ export default function PriorityBadge({ priority }: PriorityBadgeProps) {
 
     return (
         <span
-            className={`px-3 py-1 rounded text-xs font-semibold ${priorityStyles[priority]}`}
+            className={`px-4 py-2 rounded text-xs font-bold ${priorityStyles[priority]}`}
             style={{ borderRadius: "6px" }}
         >
             {priorityLabels[priority]}

@@ -39,10 +39,17 @@ html {
 
 /* Smooth transitions for interactive elements */
 button,
-input {
+input,
+select {
   transition: var(--transition-base);
 }
 
-input:focus {
+input:focus,
+select:focus {
   outline: none;
+}
+
+/* Better form element styling */
+select {
+  cursor: pointer;
 }
