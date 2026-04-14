@@ -31,12 +31,12 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <main className="min-h-screen bg-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="bg-white rounded-lg shadow-sm p-6 sm:p-8">
+        <div className="bg-white rounded-2xl p-8 sm:p-10" style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)' }}>
           <header className="mb-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Task Manager</h1>
-            <p className="text-slate-500 text-sm">Keep track of your tasks effortlessly</p>
+            <p className="text-slate-500 text-sm">Manage your tasks effortlessly</p>
           </header>
           <AddTaskForm onAddTask={addTask} />
           <TaskList tasks={tasks} onToggleTask={toggleTask} onDeleteTask={deleteTask} />

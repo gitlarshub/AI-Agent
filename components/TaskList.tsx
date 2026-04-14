@@ -15,7 +15,7 @@ export default function TaskList({ tasks, onToggleTask, onDeleteTask }: TaskList
 
   return (
     <div className="space-y-0">
-      <ul className="border border-slate-200 rounded-lg overflow-hidden shadow-sm divide-y divide-slate-200">
+      <ul className="border border-slate-200 rounded-lg overflow-hidden divide-y divide-slate-200" style={{ boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)' }}>
         {tasks.map((task) => (
           <TaskItem key={task.id} task={task} onToggle={onToggleTask} onDelete={onDeleteTask} />
         ))}

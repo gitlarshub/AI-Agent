@@ -16,18 +16,19 @@ export default function AddTaskForm({ onAddTask }: AddTaskFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 mb-6">
+    <form onSubmit={handleSubmit} className="flex gap-3 mb-8">
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Add a new task..."
-        className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-50 placeholder-slate-400 text-slate-900 transition-colors"
+        className="flex-1 px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white placeholder-slate-400 text-slate-900"
         aria-label="Task title"
       />
       <button
         type="submit"
-        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-md active:scale-95"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded font-medium"
+        style={{ borderRadius: '6px' }}
         aria-label="Add task"
       >
         Add
