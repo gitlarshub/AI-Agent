@@ -1,19 +1,49 @@
 // app/page.tsx
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import AddTaskForm from "../components/AddTaskForm"
 import TaskList from "../components/TaskList"
-import { Task } from "../.next/types/tasks"
+import FilterButtons from "../components/FilterButtons"
+import { Task, FilterType } from "../types/task"
+
+const STORAGE_KEY = "tasks"
 
 export default function HomePage() {
   const [tasks, setTasks] = useState<Task[]>([])
+  const [filter, setFilter] = useState<FilterType>("all")
+  const [mounted, setMounted] = useState(false)
 
-  const addTask = (title: string) => {
+  // Load tasks from localStorage on mount
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY)
+      if (stored) {
+        setTasks(JSON.parse(stored))
+      }
+    } catch (error) {
+      console.error("Failed to load tasks from localStorage:", error)
+    }
+    setMounted(true)
+  }, [])
+
+  // Save tasks to localStorage whenever they change
+  useEffect(() => {
+    if (mounted) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks))
+      } catch (error) {
+        console.error("Failed to save tasks to localStorage:", error)
+      }
+    }
+  }, [tasks, mounted])
+
+  const addTask = (title: string, priority: "low" | "medium" | "high" = "medium") => {
     const newTask: Task = {
       id: Date.now(),
       title,
       completed: false,
+      priority,
     }
     setTasks((prev) => [...prev, newTask])
   }
@@ -30,6 +60,13 @@ export default function HomePage() {
     setTasks((prev) => prev.filter((task) => task.id !== id))
   }
 
+  // Filter tasks based on the selected filter
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "active") return !task.completed
+    if (filter === "completed") return task.completed
+    return true
+  })
+
   return (
     <main className="min-h-screen bg-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -39,7 +76,8 @@ export default function HomePage() {
             <p className="text-slate-500 text-sm">Manage your tasks effortlessly</p>
           </header>
           <AddTaskForm onAddTask={addTask} />
-          <TaskList tasks={tasks} onToggleTask={toggleTask} onDeleteTask={deleteTask} />
+          <FilterButtons activeFilter={filter} onFilterChange={setFilter} />
+          <TaskList tasks={filteredTasks} onToggleTask={toggleTask} onDeleteTask={deleteTask} />
         </div>
       </div>
     </main>
