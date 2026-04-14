@@ -19,8 +19,8 @@ export default function AddTaskForm({ onAddTask }: AddTaskFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-8">
-      <div className="space-y-3 mb-4">
+    <form onSubmit={handleSubmit} className="mb-10">
+      <div className="space-y-3 mb-5">
         <label htmlFor="task-input" className="block text-sm font-semibold text-gray-700">Add a New Task</label>
         <input
           id="task-input"

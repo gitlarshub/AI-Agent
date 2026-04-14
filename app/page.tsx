@@ -68,13 +68,18 @@ export default function HomePage() {
   })
 
   return (
-    <main className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-sm p-6 sm:p-8">
-          <header className="mb-8">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">Task Manager</h1>
-            <p className="text-gray-500 text-base">Organize and track your tasks with ease</p>
-          </header>
+    <main className="min-h-screen bg-gray-50">
+      {/* Header Section - Full Width */}
+      <header className="bg-white border-b border-gray-200">
+        <div className="px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-2">Task Manager</h1>
+          <p className="text-gray-500 text-lg">Organize and track your tasks with ease</p>
+        </div>
+      </header>
+
+      {/* Content Section - Full Width */}
+      <div className="px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-white rounded-xl shadow-sm p-8 sm:p-10">
           <AddTaskForm onAddTask={addTask} />
           <FilterButtons activeFilter={filter} onFilterChange={setFilter} />
           <TaskList tasks={filteredTasks} onToggleTask={toggleTask} onDeleteTask={deleteTask} />

@@ -20,8 +20,8 @@ export default function FilterButtons({ activeFilter, onFilterChange }: FilterBu
                         key={filter.value}
                         onClick={() => onFilterChange(filter.value)}
                         className={`px-5 py-2 rounded font-semibold transition-colors ${activeFilter === filter.value
-                                ? "bg-blue-600 text-white"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            ? "bg-blue-600 text-white"
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                             }`}
                         style={{ borderRadius: "6px" }}
                         aria-pressed={activeFilter === filter.value}
